@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 const useForm = (validate) => {
 
@@ -64,13 +64,13 @@ const useForm = (validate) => {
                 photo: ""
             });
 
-            // axios.post('http://localhost:5000/api/v1/upload/new', formData)
-            // .then((res) => {
-            //     console.log(res);  
-            // })
-            // .catch((err) => {
-            //     console.log(err);
-            // })
+            axios.post('http://localhost:5000/api/v1/upload/new', formData)
+            .then((res) => {
+                console.log(res);  
+            })
+            .catch((err) => {
+                console.log(err);
+            })
         }
     }
 
