@@ -25,7 +25,7 @@ const Upload = () => {
                             <label htmlFor="image">Upload Image</label>
                             <input 
                                 type="file" 
-                                name="image" 
+                                name="photo" 
                                 id="image" 
                                 accept=".png, .jpg, .jpeg"
                                 style={{display: "none"}} 

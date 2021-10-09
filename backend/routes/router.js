@@ -8,7 +8,7 @@ const Data = require('../model/dataModel');
 
 router
 .route('/new')
-.post(upload.single('image'), (req, res) => {
+.post(upload.single('photo'), (req, res) => {
     
     try {
         const username = req.body.username;

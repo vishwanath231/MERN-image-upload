@@ -58,15 +58,15 @@ const useForm = (validate) => {
             formData.append('username', values.username);
             formData.append('photo', values.photo);
 
-            console.log(formData);
-            setValues({
-                username: "",
-                photo: ""
-            });
+            
 
             axios.post('http://localhost:5000/api/v1/upload/new', formData)
             .then((res) => {
-                console.log(res);  
+                console.log(res);
+                setValues({
+                    username: "",
+                    photo: ""
+                });  
             })
             .catch((err) => {
                 console.log(err);
