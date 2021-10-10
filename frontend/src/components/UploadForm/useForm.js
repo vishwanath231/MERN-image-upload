@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const useForm = (validate) => {
 
@@ -34,7 +35,7 @@ const useForm = (validate) => {
 
 
     const handleChange = (e) => {
-
+        
         const { name, value } = e.target;
 
         setValues({
@@ -44,29 +45,29 @@ const useForm = (validate) => {
     }
     
     
-
+    
+    const histroy = useHistory();
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
         setError(validate(values));
         setIsSubmitting(true)
-
+        
         if (Object.keys(error).length === 0 && isSubmitting) {
             
             const formData = new FormData();
-
+            
             formData.append('username', values.username);
             formData.append('photo', values.photo);
-
             
-
             axios.post('http://localhost:5000/api/v1/upload/new', formData)
             .then((res) => {
-                console.log(res);
-                setValues({
-                    username: "",
-                    photo: ""
-                });  
+                histroy.push("/");
+                // setValues({
+                    //     username: "",
+                //     photo: ""
+                // }); 
             })
             .catch((err) => {
                 console.log(err);

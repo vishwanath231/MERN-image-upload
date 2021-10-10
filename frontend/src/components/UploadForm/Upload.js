@@ -2,7 +2,7 @@ import React from 'react';
 import './Upload.css';
 import useForm from './useForm';
 import validate from './validateInfo';
-
+ 
 const Upload = () => {
 
     const { handleChange, handleClick, handleImage, handleSubmit, values, error } = useForm(validate);
@@ -34,7 +34,7 @@ const Upload = () => {
                             { error.photo && <p>{error.photo}</p> }
                         </div>
                         <div className="form__div">
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username">Author</label>
                             <input 
                                 type="text" 
                                 id="username"
