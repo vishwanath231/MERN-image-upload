@@ -9,7 +9,7 @@ const Card = () => {
 
     useEffect(() => {
         
-        axios.get('http://localhost:5000/api/v1/upload')
+        axios.get('/api/v1/upload')
         .then((res) => {
             setDatas(res.data.data);
         })
@@ -22,7 +22,7 @@ const Card = () => {
 
     const handelRemove = (id) => {
 
-        axios.delete(`http://localhost:5000/api/v1/upload/${id}`)
+        axios.delete(`/api/v1/upload/${id}`)
         .then(() => {
             setDatas(datas.filter((val) => {
                 return val._id !== id

@@ -61,7 +61,7 @@ const useForm = (validate) => {
             formData.append('username', values.username);
             formData.append('photo', values.photo);
             
-            axios.post('http://localhost:5000/api/v1/upload/new', formData)
+            axios.post('/api/v1/upload/new', formData)
             .then((res) => {
                 histroy.push("/");
                 // setValues({
