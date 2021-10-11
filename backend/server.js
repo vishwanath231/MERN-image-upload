@@ -19,6 +19,8 @@ connectDB();
 app.use('/api/v1/upload' , require('./routes/router'));
 
 
+app.use(express.static('/../frontend/public/image'))
+
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '/../frontend/build')));

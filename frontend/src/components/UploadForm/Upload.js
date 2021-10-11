@@ -2,6 +2,7 @@ import React from 'react';
 import './Upload.css';
 import useForm from './useForm';
 import validate from './validateInfo';
+import Placeholder from './Placeholder.png';
  
 const Upload = () => {
 
@@ -16,7 +17,7 @@ const Upload = () => {
                     <form onSubmit={handleSubmit} className="form">
                         <div className="image__container">
                             <img 
-                                src="image/placeholder.png" 
+                                src={Placeholder} 
                                 id="placeholder" 
                                 alt="placeholder" 
                                 width="200px" 
